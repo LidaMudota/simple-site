@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'MQ';
+    src: url('./font/marry-qween.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'UQB';
+    src: url('./font/ukij-qara-bold.ttf') format('truetype');
+}
+
+/* Основные стили */
+body {
+    font-family: 'MQ', 'UQB', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    perspective: 1000px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #4562F2; /* Используем ваш цвет */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: headerAnimation 10s infinite alternate;
+}
+
+@keyframes headerAnimation {
+    0% {
+        transform: perspective(1000px) rotateX(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateX(5deg);
+    }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    animation: navAnimation 10s infinite alternate;
+}
+
+@keyframes navAnimation {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(10deg);
+    }
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+}
+
+main {
+    padding: 120px 20px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.hero {
+    background: linear-gradient(135deg, #4562F2, #1abc9c); /* Используем ваш цвет */
+    color: white;
+    padding: 50px 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    animation: heroAnimation 5s infinite alternate;
+}
+
+@keyframes heroAnimation {
+    0% {
+        transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(10deg) rotateX(10deg);
+    }
+}
+
+.content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: contentAnimation 5s infinite alternate;
+}
+
+@keyframes contentAnimation {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(10deg);
+    }
+}
+
+.content:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #4562F2; /* Используем ваш цвет */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: auto;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input[type="text"], form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 3px solid #ddd;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+form input[type="text"]:focus, form input[type="email"]:focus {
+    border: 3px solid #1abc9c;
+    box-shadow: 0 0 8px rgba(26, 188, 156, 0.2);
+}
+
+/* Стили для кнопки отправки формы */
+form input[type="submit"] {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.5em 0.8em 1.2em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, rgba(77,54,208,1) 0%, rgba(132,116,254,1) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+form input[type="submit"] svg {
+    margin-right: 8px;
+}
+
+form input[type="submit"]:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #4d36d0be;
+}
+
+form input[type="submit"]:active {
+    box-shadow: 0 0.3em 1em -0.5em #4d36d0be;
+    transform: scale(0.97);
+}
